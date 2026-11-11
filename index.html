@@ -20,19 +20,24 @@
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"WebSite","@id":"https://ytmp4-net.github.io/#site","name":"YTMP4","alternateName":"YTMP4 YouTube to MP4","url":"https://ytmp4-net.github.io/","inLanguage":"en"},
+{"@type":"Organization","@id":"https://ytmp4-net.github.io/#org","name":"YTMP4","url":"https://ytmp4-net.github.io/","logo":"https://ytmp4-net.github.io/img/icon-180.png","sameAs":["https://github.com/ytmp4-net","https://ytmp4.store/"]},
+{"@type":"WebSite","@id":"https://ytmp4-net.github.io/#site","name":"YTMP4","alternateName":"YTMP4 YouTube to MP4","url":"https://ytmp4-net.github.io/","inLanguage":"en","publisher":{"@id":"https://ytmp4-net.github.io/#org"}},
 {"@type":"WebApplication","name":"YTMP4 - YouTube to MP4 Converter","url":"https://ytmp4-net.github.io/","applicationCategory":"MultimediaApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"image":"https://ytmp4-net.github.io/img/ytmp4-youtube-to-mp4-converter.png"},
 {"@type":"HowTo","name":"How to convert a YouTube video to MP4 with YTMP4","image":"https://ytmp4-net.github.io/img/how-to-convert-youtube-to-mp4.png","step":[
 {"@type":"HowToStep","name":"Copy the link","text":"Open the video in the YouTube app or website, tap Share and choose Copy link."},
 {"@type":"HowToStep","name":"Paste it into YTMP4","text":"Paste the link into the box at the top of this page and press Convert."},
 {"@type":"HowToStep","name":"Pick a quality","text":"Choose MP4 1080p, 720p, 480p or 360p, or MP3 for audio, and press Download."}]},
 {"@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Is YTMP4 free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every quality, MP4 and MP3, is free. There is no account, no app and no daily limit for normal use."}},
-{"@type":"Question","name":"What is the best quality I can download?","acceptedAnswer":{"@type":"Answer","text":"YTMP4 lists every quality the video was uploaded in, usually up to 1080p and sometimes 1440p or 4K. The best one is shown first."}},
-{"@type":"Question","name":"Does YTMP4 work on iPhone?","acceptedAnswer":{"@type":"Answer","text":"Yes. Open the page in Safari, convert the video and tap Download. iOS saves it in the Files app under Downloads, and from there you can save it to Photos."}},
-{"@type":"Question","name":"Can I download only the audio?","acceptedAnswer":{"@type":"Answer","text":"Yes. After converting, open the MP3 tab and pick MP3 or M4A. You get the sound only, which is smaller and good for music and podcasts."}},
-{"@type":"Question","name":"Do Shorts links work?","acceptedAnswer":{"@type":"Answer","text":"Yes. Paste a youtube.com/shorts link the same way as a normal video and it downloads as a vertical MP4."}},
-{"@type":"Question","name":"Where are my downloads saved?","acceptedAnswer":{"@type":"Answer","text":"In your browser's normal Downloads folder: the Download folder on Android, Files > Downloads on iPhone and the Downloads folder on a computer."}}]}
+{"@type":"Question","name":"Is YTMP4 free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every quality, MP4 and MP3, is free. There is no account, no app and no daily limit for normal use. The site is paid for by a few ads that stay out of the way."}},
+{"@type":"Question","name":"What is the best quality I can download?","acceptedAnswer":{"@type":"Answer","text":"YTMP4 lists every quality the video was uploaded in, usually up to 1080p and sometimes 1440p or 4K. The best one is always shown first."}},
+{"@type":"Question","name":"Does YTMP4 work on iPhone?","acceptedAnswer":{"@type":"Answer","text":"Yes. Open the page in Safari, convert the video and tap Download. iOS saves it in Files under Downloads, and from there you can save it to Photos."}},
+{"@type":"Question","name":"Can I download only the audio?","acceptedAnswer":{"@type":"Answer","text":"Yes. After converting, open the MP3 audio tab and pick MP3 or M4A."}},
+{"@type":"Question","name":"Do YouTube Shorts work?","acceptedAnswer":{"@type":"Answer","text":"Yes. Paste a youtube.com/shorts link the same way as a normal video. It downloads as a vertical MP4."}},
+{"@type":"Question","name":"Where are my downloads saved?","acceptedAnswer":{"@type":"Answer","text":"In your browser's normal download folder: Download on Android, Files > Downloads on iPhone and Downloads on a computer."}},
+{"@type":"Question","name":"Why does a video say it can't be converted?","acceptedAnswer":{"@type":"Answer","text":"Private, members-only, age-restricted, region-locked and live videos can't be read. Removed videos can't either. Try a different public video to check that the tool works."}},
+{"@type":"Question","name":"Is there a length limit?","acceptedAnswer":{"@type":"Answer","text":"There is no fixed limit, but very long videos in 1080p make large files. For lectures and podcasts longer than two hours, 480p or MP3 is the practical choice."}},
+{"@type":"Question","name":"Do I need to install anything?","acceptedAnswer":{"@type":"Answer","text":"No. YTMP4 runs in the browser. Never install an app or extension that a download page asks you to install; YTMP4 never asks."}},
+{"@type":"Question","name":"Is YTMP4 connected to YouTube?","acceptedAnswer":{"@type":"Answer","text":"No. YTMP4 is an independent tool and is not affiliated with, endorsed by or sponsored by YouTube or Google."}}]}
 ]}
 </script>
 </head>
@@ -40,7 +45,7 @@
 <header class="top">
   <div class="wrap bar">
     <a class="brand" href="./" aria-label="YTMP4 home"><img src="img/favicon.svg" width="30" height="30" alt=""> YTMP4</a>
-    <nav><a href="#how">How it works</a><a href="#mp3">MP3</a><a href="#faq">FAQ</a></nav>
+    <nav><a href="#how">How to</a><a href="#quality">Quality</a><a href="#mp3">MP3</a><a href="#faq">FAQ</a></nav>
   </div>
 </header>
 
@@ -81,68 +86,157 @@
   </div>
 </section>
 
-<section class="sec" id="how">
+<section class="sec">
+  <div class="wrap prose">
+    <h2>What YTMP4 does, in plain words</h2>
+    <p>YTMP4 takes a YouTube link and gives you back a normal video file. That's the whole idea. You paste the address of a video, the page asks YouTube which versions of that video exist, and you get a short list: 1080p, 720p, 480p, 360p and an audio-only MP3. Tap the one you want and your browser saves it like any other download.</p>
+    <p>There's no program to install and nothing to sign up for. The converter works the same way in Chrome on an old Android phone, in Safari on an iPhone, and in Edge or Firefox on a laptop. We built it because most "free" downloaders we tried had three fake Download buttons, a forced app install, or a quality list that promised 1080p and delivered something blurry. YTMP4 shows you exactly what the video has, with the approximate file size next to each option, so you know what you're getting before the download starts.</p>
+    <p>The file you get is an MP4: the most common video format there is. It opens in the gallery on Android, in Photos on iPhone, in VLC, in Windows Media Player, in QuickTime, in video editors and on smart TVs from a USB stick. You don't need a special player and you don't need to convert it a second time.</p>
+    <p>If you'd rather use a version of this tool in your own language, the original <a href="https://ytmp4.store/">YTMP4</a> converter runs in 13 languages, including Spanish, Portuguese, Indonesian, Hindi and Arabic. This page is the lightweight English edition, kept fast and simple.</p>
+  </div>
+</section>
+
+<section class="sec alt" id="how">
   <div class="wrap">
-    <h2>How to convert YouTube to MP4</h2>
+    <h2>How to convert YouTube to MP4 with YTMP4</h2>
     <div class="how">
       <ol class="steps">
-        <li><b>Copy the link.</b> In the YouTube app tap <em>Share → Copy link</em>. On a computer, copy the address from the browser bar.</li>
-        <li><b>Paste it above.</b> Put the link in the box and press <em>Convert</em>. YTMP4 reads the video and lists every format it has.</li>
-        <li><b>Pick a quality and download.</b> Choose 1080p for the sharpest picture, 360p for a small file, or MP3 for sound only.</li>
+        <li><b>Copy the link.</b> In the YouTube app, tap <em>Share</em> under the video and choose <em>Copy link</em>. On a computer, click the address bar and copy the URL. Links that start with youtube.com/watch, youtu.be or youtube.com/shorts all work.</li>
+        <li><b>Paste it above.</b> Tap the box at the top of this page. On most phones the <em>Paste</em> button fills it in for you and starts right away. Otherwise long-press the box, paste, and press <em>Convert</em>.</li>
+        <li><b>Pick a quality and download.</b> After a few seconds you'll see the video title, the thumbnail and every available format. Tap <em>Download</em> next to the one you want. The best quality is listed first and highlighted.</li>
       </ol>
       <img src="img/how-to-convert-youtube-to-mp4.png" width="800" height="500" loading="lazy" alt="Three steps to convert a YouTube video to MP4 with YTMP4: copy the link, paste it, download the MP4">
     </div>
+    <div class="prose">
+      <p>A few details that save time. The download links stay valid for a few hours, so you can convert a video now and save a second quality later without starting over, as long as you keep the page open. If you have a playlist link with a single video in it (the address contains both <code>v=</code> and <code>list=</code>), YTMP4 takes the video you were watching and ignores the list. And if you paste a link from the mobile site (m.youtube.com) or with a timestamp like <code>&amp;t=95s</code>, that's fine too: the page cleans it up for you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="quality">
+  <div class="wrap prose">
+    <h2>Which quality should you choose?</h2>
+    <p>Bigger isn't always better. A 1080p file looks great on a TV but is wasted on a phone screen if you're short on storage. Here's a quick guide based on a typical ten-minute video:</p>
+    <table>
+      <thead><tr><th>Quality</th><th>Best for</th><th>Size (10 minutes)</th></tr></thead>
+      <tbody>
+        <tr><td>1080p (Full HD)</td><td>TV, laptop, editing, presentations</td><td>about 120–250 MB</td></tr>
+        <tr><td>720p (HD)</td><td>Phones and tablets</td><td>about 60–120 MB</td></tr>
+        <tr><td>480p</td><td>Saving storage, long lectures</td><td>about 35–60 MB</td></tr>
+        <tr><td>360p</td><td>Slow connections, old phones</td><td>about 20–40 MB</td></tr>
+        <tr><td>MP3 audio</td><td>Music, podcasts, talks</td><td>about 8–10 MB</td></tr>
+      </tbody>
+    </table>
+    <p><b>1080p</b> is the right pick when you'll watch on a big screen, cut clips in an editor, or show the video in a classroom or meeting. Text on slides and code in tutorials stays sharp. <b>720p</b> is the sweet spot for phones: on a six-inch screen it's very hard to tell apart from 1080p, and the file is roughly half the size. <b>480p</b> works well for lectures, podcasts with a static camera and anything where the picture matters less than the sound. <b>360p</b> is for when you're on mobile data or need a file small enough to send in a chat app.</p>
+    <p>Some videos also offer <b>1440p or 4K</b>. YTMP4 lists them when they exist. These files are large, and many phones can't play 4K smoothly, so only choose them if you have a screen that shows the difference.</p>
+    <p>Sizes in the list are estimates from YouTube's own data. Videos with a lot of motion (sports, games, concerts) come out bigger than a person talking in front of a wall at the same resolution, because there's more changing in every frame.</p>
+    <img src="img/ytmp4-youtube-to-mp4-converter.png" width="1200" height="630" loading="lazy" alt="YTMP4 YouTube to MP4 converter showing 1080p, 720p and MP3 download options">
   </div>
 </section>
 
 <section class="sec alt">
   <div class="wrap prose">
-    <h2>Why people use YTMP4</h2>
-    <p>Most of us save videos for the same reasons: a long flight without Wi-Fi, a tutorial you want to follow step by step, a lecture you want to watch again before an exam, or a clip for a school or work presentation. Streaming every time costs data and doesn't work in the metro. A local MP4 file just plays.</p>
-    <p>YTMP4 keeps the job simple. There is one box, one button and a clear list of files. You don't install anything, you don't make an account, and you don't have to guess which button is the real one. The download starts from the list you see, named after the video title.</p>
+    <h2>Downloading YouTube videos on Android</h2>
+    <p>Android is the easiest. Open YTMP4 in Chrome (or Samsung Internet, Firefox, Brave or Opera), convert the video and tap <em>Download</em>. A bar at the bottom shows the progress. When it finishes, the video is in the <em>Download</em> folder, and after a few seconds it also shows up in your Gallery or Google Photos under "Downloads".</p>
+    <p>If nothing seems to happen when you tap Download, pull down the notification shade: the download may be running there. If the browser asks whether to keep the file, tap <em>Download</em> or <em>Keep</em>. That warning appears for many video files and doesn't mean anything is wrong.</p>
+    <p>Tip: to come back faster next time, open the browser menu and choose <em>Add to Home screen</em>. You'll get a YTMP4 icon that opens this page directly. Then sharing a video is three taps: Share → Copy link in YouTube, open YTMP4, tap Paste.</p>
 
-    <h3>Every quality the video has</h3>
-    <p>When you convert, YTMP4 asks YouTube which formats exist for that video and shows all of them with their approximate size. HD videos usually come in these versions:</p>
-    <table>
-      <thead><tr><th>Quality</th><th>Good for</th><th>Size of a 10-minute video</th></tr></thead>
-      <tbody>
-        <tr><td>1080p (Full HD)</td><td>TV, laptop, editing</td><td>about 120–250 MB</td></tr>
-        <tr><td>720p (HD)</td><td>Phones and tablets</td><td>about 60–120 MB</td></tr>
-        <tr><td>480p</td><td>Saving storage</td><td>about 35–60 MB</td></tr>
-        <tr><td>360p</td><td>Slow connections</td><td>about 20–40 MB</td></tr>
-        <tr><td>MP3 audio</td><td>Music, podcasts, talks</td><td>about 8–10 MB</td></tr>
-      </tbody>
-    </table>
-    <p>The video and its sound arrive together in one standard MP4 file (H.264 video with AAC audio when available), so it opens in the gallery app on Android, in Photos on iPhone and in any player on Windows or Mac.</p>
+    <h2>Downloading on iPhone and iPad</h2>
+    <p>On iOS, use Safari. Chrome on iPhone works too, but Safari handles downloads most reliably. After converting, tap <em>Download</em>. Safari may ask "Do you want to download…?" Tap <em>Download</em> again. A small blue arrow appears at the top of the screen with the progress.</p>
+    <p>When the download finishes, the video is in the <strong>Files</strong> app, under <em>On My iPhone → Downloads</em> (or iCloud Drive → Downloads, depending on your settings). Videos in Files don't show up in the Photos app automatically. To move it there, open the video in Files, tap the <em>Share</em> button and choose <em>Save Video</em>. Now it's in your camera roll and you can trim it, send it on WhatsApp or post it like any other clip.</p>
+    <p>If Safari says the download failed, check that you have enough free storage. A 1080p video of a long concert can easily be over a gigabyte. Picking 720p usually fixes it.</p>
 
-    <h3>On Android, iPhone and computer</h3>
-    <p><b>Android:</b> use Chrome or any browser. The file lands in the <em>Download</em> folder and shows up in your gallery a moment later.<br>
-    <b>iPhone and iPad:</b> use Safari. After the download finishes, open <em>Files → Downloads</em>, tap the video, then <em>Share → Save Video</em> to put it in Photos.<br>
-    <b>Windows, Mac and Linux:</b> any modern browser works. Files go to your normal Downloads folder.</p>
-    <img src="img/ytmp4-youtube-to-mp4-converter.png" width="1200" height="630" loading="lazy" alt="YTMP4 YouTube to MP4 converter showing 1080p, 720p and MP3 download options">
+    <h2>On Windows, Mac, Linux and Chromebook</h2>
+    <p>On a computer, any modern browser works. The file goes to your usual Downloads folder and is named after the video title, so you can find it without hunting through random file names. Double-click it and it plays in the default video app. If you edit videos, the MP4 drops straight into Premiere Pro, DaVinci Resolve, CapCut, iMovie, Shotcut or Clipchamp without converting.</p>
+    <p>On a Chromebook, the file lands in <em>My files → Downloads</em> and plays in the built-in Gallery app.</p>
   </div>
 </section>
 
-<section class="sec" id="mp3">
+<section class="sec">
   <div class="wrap prose">
-    <h2>YouTube to MP3 with the same tool</h2>
-    <p>You don't need a second site for music. After converting, switch to the <em>MP3 audio</em> tab. MP3 plays on every device and car stereo; M4A is the original audio track and is slightly smaller at the same quality. Audio files are a fraction of the video size, so an hour-long podcast fits easily on any phone.</p>
-    <p>If you mostly convert music or need more audio options, the full <a href="https://ytmp4.store/youtube-to-mp3/">YouTube to MP3 converter on ytmp4.store</a> is built for that, and <a href="https://ytmp4.store/">YTMP4 at ytmp4.store</a> has the converter in 13 languages.</p>
+    <h2>YouTube Shorts to MP4</h2>
+    <p>Shorts work exactly like regular videos. Open the Short, tap <em>Share → Copy link</em>, and paste the link into YTMP4. You get a vertical MP4, usually at 1080×1920, the same shape as the original. That makes it easy to keep a Short you liked, use it as a reaction clip, or watch it again offline. Because Shorts are under a minute, the files are small, usually just a few megabytes even in full HD.</p>
 
-    <h2>Use it fairly</h2>
-    <p>Download your own uploads, Creative Commons videos, and anything the creator allows you to keep. Re-uploading someone else's work is against YouTube's rules and copyright law. YTMP4 is an independent tool and is not affiliated with YouTube or Google.</p>
+    <h2 id="mp3">YouTube to MP3 on the same page</h2>
+    <p>Sometimes you only want the sound: a song, a podcast episode, a sermon, a language lesson, a speech. After converting, switch to the <em>MP3 audio</em> tab. You'll see two options. <b>MP3</b> plays everywhere, including old MP3 players, car stereos and every phone. <b>M4A</b> is the original audio track that YouTube streams; it's a little smaller at the same quality and plays on all phones and computers, but some older devices don't recognize it.</p>
+    <p>Audio files are tiny compared to video: an hour of MP3 is roughly 60–90 MB, while the same hour in 1080p video can be over a gigabyte. If you listen on the bus or at the gym, audio is the smarter download. If you mostly convert music, the dedicated <a href="https://ytmp4.store/youtube-to-mp3/">YouTube to MP3 converter</a> is set up for that, with the audio tab opened first.</p>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="wrap prose">
+    <h2>Why a video might not convert</h2>
+    <p>Most public videos convert in a few seconds. When one doesn't, it's almost always one of these reasons:</p>
+    <ul>
+      <li><b>The video is private or unlisted with restrictions.</b> If you can't watch it without being logged in to a specific account, the converter can't read it either.</li>
+      <li><b>It's age-restricted.</b> YouTube requires sign-in for these videos, so they can't be downloaded without an account.</li>
+      <li><b>It's members-only or a paid video.</b> Channel memberships, YouTube Premium-only content and rented movies are protected.</li>
+      <li><b>It's a live stream that's still running.</b> Wait until the stream ends and YouTube finishes processing it, then try again.</li>
+      <li><b>It's blocked in some countries.</b> Region-locked videos sometimes fail.</li>
+      <li><b>It was removed.</b> Deleted videos and videos taken down for copyright are gone for good.</li>
+      <li><b>The link is incomplete.</b> If you copied only part of the address, the page can't find the video. Copy it again with Share → Copy link.</li>
+    </ul>
+    <p>Very rarely, YouTube is slow to answer and you'll see a "try again" message. Wait half a minute and convert again; it usually goes through on the second try. If one particular video never works but others do, the problem is with that video, not with your phone or connection.</p>
+    <p>If a download starts but stops halfway, it's usually the connection. Switch from mobile data to Wi-Fi, or choose a smaller quality. Keep the screen on while a big file downloads on a phone, because some phones pause downloads when they go to sleep.</p>
+
+    <h2>Is YTMP4 safe to use?</h2>
+    <p>Yes, and here's specifically why. You never install anything: YTMP4 is a web page, so there's no app with permissions on your phone and no browser extension reading your tabs. You don't create an account and you don't give us your email, so there's nothing to leak. The files you download are plain MP4 and MP3 media files, not programs. A video file can't run code on your device.</p>
+    <p>The site is paid for by a small number of ads: a banner, a box under the results on some visits and a native ad block further down. We deliberately don't use pop-ups, pop-unders, fake "Download" buttons or redirect ads, because those are what make most downloader sites miserable. The real download buttons are always the green ones inside the result card. Our <a href="privacy/">privacy policy</a> explains exactly what is and isn't stored.</p>
+
+    <h2>Why MP4?</h2>
+    <p>MP4 is a container that holds video and audio together in one file. Inside, YTMP4 gives you H.264 video with AAC audio whenever YouTube offers it, which is the combination that every phone, computer, browser and TV can play without extra software. Other formats like WebM or MKV can look identical, but they trip up iPhones, some smart TVs and a lot of editing apps. With MP4 you skip all of that.</p>
+
+    <h2>Tips for keeping your downloads organized</h2>
+    <p>If you download a lot, a couple of habits help. Make a folder per topic (one for lectures, one for recipes, one for workouts) and move files there right after downloading. Delete what you've finished watching: a phone fills up quickly with HD video. For long courses, choose 480p; you'll fit five times as many lessons in the same space. And if you only listen, take the MP3 instead of the video.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap prose">
+    <h2>YTMP4 vs. other ways to save a video</h2>
+    <p>There are a few other ways people try to keep a YouTube video, and each has a catch.</p>
+    <p><b>Screen recording.</b> Every phone can record its screen, so it seems like the obvious answer. In practice the result is worse: notifications pop up in the middle, the status bar and player buttons end up in the frame, the sound is re-recorded and often quieter, and you have to sit through the whole video in real time. A 40-minute lecture takes 40 minutes to record. With YTMP4 the same lecture downloads in a minute or two, in the original picture quality, with clean sound.</p>
+    <p><b>YouTube's own Download button.</b> The official offline feature in the app is fine for a quick flight, but the video stays locked inside the YouTube app. You can't move it to your laptop, play it on a TV from a USB stick, open it in an editor or send it to a friend. It also disappears if you don't reconnect to the internet for a while, and for most features you need a Premium subscription. An MP4 from YTMP4 is a normal file you control.</p>
+    <p><b>Desktop programs and browser extensions.</b> Some work well, but you have to install them, keep them updated and trust them with your computer. Extensions in particular can read every page you visit. YTMP4 needs none of that; close the tab and it's gone.</p>
+    <p><b>Other converter sites.</b> Many are fine, but the common problems are fake download buttons, pop-up windows, forced app installs on Android, and files that are much lower quality than advertised. We try hard to avoid all four.</p>
+
+    <h2>What people use YTMP4 for</h2>
+    <p>Looking at the questions we get, a few uses come up again and again:</p>
+    <ul>
+      <li><b>Studying.</b> Students save lectures, exam walkthroughs and language lessons to watch on the commute or in places with bad signal. Downloading a course once and watching it many times also saves a lot of mobile data.</li>
+      <li><b>Teaching and presenting.</b> Teachers and trainers download a short clip to play in class or in a meeting, so they don't depend on the room's Wi-Fi or have an ad start in front of the audience.</li>
+      <li><b>Travel.</b> Before a long flight, a train ride or a trip somewhere with expensive roaming, people save a few films' worth of videos, cooking shows or kids' cartoons.</li>
+      <li><b>Creators backing up their own work.</b> If you've lost the original file of something you uploaded years ago, YTMP4 gets you a copy back from your own channel.</li>
+      <li><b>Editing.</b> Video editors pull Creative Commons footage, public-domain clips or their own uploads into an editing project, where an MP4 is the easiest format to work with.</li>
+      <li><b>Music and podcasts.</b> With the MP3 tab, people keep talks, sermons, mixes and podcast episodes for listening offline.</li>
+    </ul>
+
+    <h2>Common mistakes to avoid</h2>
+    <p><b>Downloading 4K for a phone.</b> It looks no better on a small screen and fills your storage four times as fast. Take 720p or 1080p.</p>
+    <p><b>Tapping ads instead of the result.</b> On any free website, the download you want is the one inside the result card, next to the quality you picked. On YTMP4 those buttons are green and say Download.</p>
+    <p><b>Closing the page during a big download on iPhone.</b> On iOS, keep Safari open until the blue progress arrow finishes; leaving the app can pause or cancel a large file.</p>
+    <p><b>Copying the wrong link.</b> Copying the address of a channel page, a search result or your subscriptions feed won't work. Open the video itself first, then use Share → Copy link.</p>
+
+    <h2>A note on using downloads fairly</h2>
+    <p>Downloading is great for watching offline, studying, and keeping your own uploads. It's not permission to re-upload other people's work. Save your own videos, videos released under Creative Commons, public-domain material, and anything the creator says you may keep. Don't re-post someone else's content as your own or use it commercially without permission: that breaks YouTube's terms and copyright law, and it hurts the people who made the video. If you love a channel, the best thing you can still do is watch, like and subscribe on YouTube.</p>
+    <p>YTMP4 doesn't host or keep copies of any video. Files are prepared on request and deleted shortly afterwards. If you're a rights holder with a concern, see our <a href="dmca/">copyright page</a>.</p>
+    <p>Want the full-featured version? <a href="https://ytmp4.store/youtube-to-mp4/">YouTube to MP4</a> on ytmp4.store adds search by video name, playlist support and pages in 13 languages, all with the same simple layout.</p>
   </div>
 </section>
 
 <section class="sec alt" id="faq">
   <div class="wrap prose">
-    <h2>Questions</h2>
-    <details><summary>Is YTMP4 free?</summary><p>Yes. Every quality, MP4 and MP3, is free. There is no account, no app and no daily limit for normal use.</p></details>
-    <details><summary>What is the best quality I can download?</summary><p>YTMP4 lists every quality the video was uploaded in, usually up to 1080p and sometimes 1440p or 4K. The best one is shown first.</p></details>
-    <details><summary>Does YTMP4 work on iPhone?</summary><p>Yes. Open the page in Safari, convert the video and tap Download. iOS saves it in the Files app under Downloads, and from there you can save it to Photos.</p></details>
-    <details><summary>Can I download only the audio?</summary><p>Yes. After converting, open the MP3 tab and pick MP3 or M4A. You get the sound only, which is smaller and good for music and podcasts.</p></details>
-    <details><summary>Do Shorts links work?</summary><p>Yes. Paste a youtube.com/shorts link the same way as a normal video and it downloads as a vertical MP4.</p></details>
-    <details><summary>Where are my downloads saved?</summary><p>In your browser's normal Downloads folder: the Download folder on Android, Files &gt; Downloads on iPhone and the Downloads folder on a computer.</p></details>
+    <h2>Frequently asked questions</h2>
+    <details><summary>Is YTMP4 free?</summary><p>Yes. Every quality, MP4 and MP3, is free. There is no account, no app and no daily limit for normal use. The site is paid for by a few ads that stay out of the way.</p></details>
+    <details><summary>What is the best quality I can download?</summary><p>YTMP4 lists every quality the video was uploaded in, usually up to 1080p and sometimes 1440p or 4K. The best one is always shown first.</p></details>
+    <details><summary>Does YTMP4 work on iPhone?</summary><p>Yes. Open the page in Safari, convert the video and tap Download. iOS saves it in Files under Downloads, and from there you can save it to Photos.</p></details>
+    <details><summary>Can I download only the audio?</summary><p>Yes. After converting, open the MP3 audio tab and pick MP3 or M4A.</p></details>
+    <details><summary>Do YouTube Shorts work?</summary><p>Yes. Paste a youtube.com/shorts link the same way as a normal video. It downloads as a vertical MP4.</p></details>
+    <details><summary>Where are my downloads saved?</summary><p>In your browser's normal download folder: Download on Android, Files &gt; Downloads on iPhone and Downloads on a computer.</p></details>
+    <details><summary>Why does a video say it can't be converted?</summary><p>Private, members-only, age-restricted, region-locked and live videos can't be read. Removed videos can't either. Try a different public video to check that the tool works.</p></details>
+    <details><summary>Is there a length limit?</summary><p>There is no fixed limit, but very long videos in 1080p make large files. For lectures and podcasts longer than two hours, 480p or MP3 is the practical choice.</p></details>
+    <details><summary>Do I need to install anything?</summary><p>No. YTMP4 runs in the browser. Never install an app or extension that a download page asks you to install; YTMP4 never asks.</p></details>
+    <details><summary>Is YTMP4 connected to YouTube?</summary><p>No. YTMP4 is an independent tool and is not affiliated with, endorsed by or sponsored by YouTube or Google.</p></details>
   </div>
 </section>
 
@@ -151,8 +245,9 @@
 
 <footer class="foot">
   <div class="wrap">
+    <nav class="legal"><a href="about/">About</a><a href="contact/">Contact</a><a href="privacy/">Privacy Policy</a><a href="terms/">Terms of Use</a><a href="disclaimer/">Disclaimer</a><a href="dmca/">DMCA</a></nav>
     <p><b>YTMP4</b> · YouTube to MP4 and MP3 converter · <a href="https://ytmp4.store/">ytmp4.store</a> · <a href="https://github.com/ytmp4-net">GitHub</a></p>
-    <p class="small">Not affiliated with YouTube or Google. Please respect creators' rights.</p>
+    <p class="small">© 2026 YTMP4. Not affiliated with YouTube or Google. Please respect creators' rights.</p>
   </div>
 </footer>
 

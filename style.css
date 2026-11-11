@@ -93,3 +93,9 @@ body.has-sticky{padding-bottom:62px}
  .fmt{display:none}.rows li{justify-content:space-between}
  .how{grid-template-columns:1fr}
 }
+
+.legal{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:10px}
+.prose ul{padding-left:22px}.prose li{margin-bottom:8px}
+code{background:var(--gs);padding:1px 5px;border-radius:4px;font-size:.92em}
+.page h1{font-size:clamp(28px,4vw,40px);margin:0 0 6px}
+.page .upd{color:var(--muted);font-size:14px;margin:0 0 26px}
